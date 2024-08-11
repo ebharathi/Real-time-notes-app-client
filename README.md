@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+Hi Guys!<br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SCREEN RECORD DRIVE LINK : https://drive.google.com/file/d/1JDlkWkQdJcbKqEPNEPK4G4NNQputJyvI/view?usp=sharing
+<br/>
+Here also I have attached the screenshot of the recording for the task
+<br/>
 
-## Available Scripts
+![image](https://github.com/user-attachments/assets/c2d330a2-ed9d-4786-ab97-0c73c5587d40)
+![image](https://github.com/user-attachments/assets/e239f8d6-a07c-4814-8954-b3ac164f1ee8)
+![image](https://github.com/user-attachments/assets/f82b781c-9021-4a48-926a-ddca68d255e5)
+![image](https://github.com/user-attachments/assets/c313984e-df75-451b-88ce-72dfcb812790)
+![image](https://github.com/user-attachments/assets/137d9fb2-aead-407b-93e0-416065c60f04)
 
-In the project directory, you can run:
+To Get Started,
+<br/>
+Run npm install and npm start
+<br/>
+Features:
+<br/>
+Signup/login with JWT Verification token
+<br/>
+Adding new Notes
+<br/>
+Deleting, sharing, editing the note
+<br/>
+The Creator can add users by email to grant access to read and write, alos remove users
+<br/>
+If some other user who don't have access tries to use the url, then it will say you are not authorized. If have access to read, then you can see the notes. But you can only edit if you have access to edit granted by the owner
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
