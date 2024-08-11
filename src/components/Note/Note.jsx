@@ -8,10 +8,10 @@ import Modal from "../Modal";
 import { IoSettings } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { verifyAccess, updateNote, getNoteById } from '../../utils/api';
+import socket from '../../utils/socketService';
 
 const Note = () => {
     const { id } = useParams();
-    console.log("Note ID:", id); // Check if this logs the correct ID
     const [content, setContent] = useState('');
     const [showModal, setShowModal] = useState(false);
 
@@ -28,9 +28,7 @@ const Note = () => {
 
 
     const handleQuillChange = (value) => {
-        setContent(value);
         updateNote(id, value).then((response) => {
-            console.log("update response :", response)
             if (response.error == true) {
                 setShowNoEditAccess(true);
             }
@@ -42,6 +40,9 @@ const Note = () => {
 
     useEffect(() => {
         if (id != undefined) {
+            // Join the room when the component mounts
+            socket.emit('joinNote', id);
+
             verifyAccess(id).then((response) => {
                 if (response.error == true) {
                     setShowUnauthorizedModal(true);
@@ -49,7 +50,6 @@ const Note = () => {
                 //if authorized,then get data
                 else {
                     getNoteById(id).then((response) => {
-                        console.log("RESPONSE  FOR NOTE BY ID: ", response);
                         if (response.error == false) {
                             setContent(response.data.content)
                         }
@@ -58,7 +58,26 @@ const Note = () => {
             })
 
         }
+
+        // Cleanup on unmount
+        return () => {
+            socket.emit('leaveNote', id);
+        };
     }, [id])
+
+    useEffect(() => {
+        socket.on("updatedNote", (data) => {
+            if (data.error == false) {
+                setContent(data.data.content);
+            }
+        })
+
+        // Cleanup when component unmounts
+        return () => {
+            socket.off('updatedNote');
+        };
+    }, [])
+
     return (
         <div className="h-screen p-2.5">
             {showUnauthorizedModal && <div className='absolute flex justify-center items-center h-screen w-full '>

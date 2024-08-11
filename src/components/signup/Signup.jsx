@@ -47,6 +47,10 @@ const Signup = () => {
         })
     }
 
+    useEffect(() => {
+        if (localStorage.getItem("token"))
+            navigate("/home");
+    }, [])
 
     return (
         <div className="h-screen flex justify-center items-center">

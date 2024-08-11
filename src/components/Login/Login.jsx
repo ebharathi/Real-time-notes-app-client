@@ -1,6 +1,6 @@
 import { MdEmail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { SignIn } from "../../utils/api";
 const Login = () => {
@@ -10,6 +10,7 @@ const Login = () => {
     const [passwordError, setPasswordError] = useState("");
     const [error, setError] = useState("");
     const [btnLoader, setBtnLoader] = useState("LOGIN");
+
 
     const handleLogin = async () => {
         setBtnLoader("PLEASE WAIT..");
@@ -44,6 +45,11 @@ const Login = () => {
         console.log("Login logic not implemented yet.");
         setBtnLoader("LOGIN");
     }
+
+    useEffect(() => {
+        if (localStorage.getItem("token"))
+            navigate("/home");
+    }, [])
 
     return (
         <div className="h-screen flex justify-center items-center">
