@@ -27,3 +27,5 @@ The Creator can add users by email to grant access to read and write, alos remov
 <br/>
 If some other user who don't have access tries to use the url, then it will say you are not authorized. If have access to read, then you can see the notes. But you can only edit if you have access to edit granted by the owner
 
+<br/>
+For one edge case , if both users edit at same place in a docuemnt, then according to basic nodejs rule that is the server handles each request independently. So the first user's change will reflect in frontend because the request goes linearly. 
